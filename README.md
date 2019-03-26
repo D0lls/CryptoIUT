@@ -2,7 +2,9 @@
 
 ![Logo](https://cryptofr.com/assets/uploads/profile/8580-profileavatar.png)
  ---------------------------
-_Membres du groupe :_
+
+
+*Membre du groupe :*
   - Lemaire Arthur
   - Andrusiak Victor
   - Courquin Chloé
