@@ -13,3 +13,12 @@ Membres du groupe :
  
  Fonctionnement général :
   - Application mobile ayant pour but d'afficher les différentes cryptomonnaies et variations du marché.
+  
+ ---------------------------
+ 
+ Fonctionnalitées implantées :
+  - Affichage de la liste des différentes crypto dans l'ordre de capitalisation
+  - Affichage du logo, du nom, de l'identifiant de chaque crypto
+  - Au clic sur une crypto, affichage du cours de celle-ci sur les dernières 24h
+  
+  
