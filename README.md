@@ -1,6 +1,6 @@
 # Crypto_IUT
 
-Membres du groupe :
+_Membres du groupe :_
   - Lemaire Arthur
   - Andrusiak Victor
   - Courquin Chloé
