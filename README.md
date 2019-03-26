@@ -20,5 +20,6 @@ Membres du groupe :
   - Affichage de la liste des différentes crypto dans l'ordre de capitalisation
   - Affichage du logo, du nom, de l'identifiant de chaque crypto
   - Au clic sur une crypto, affichage du cours de celle-ci sur les dernières 24h
-  
+  - Possibilité d'ajouter une crypto en favoris
+  - Menu permettant d'accéder aux favoris
   
