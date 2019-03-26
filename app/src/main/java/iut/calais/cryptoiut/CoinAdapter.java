@@ -5,8 +5,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -37,13 +40,13 @@ public class CoinAdapter extends RecyclerView.Adapter<CoinAdapter.CoinViewHolder
 
     class CoinViewHolder extends RecyclerView.ViewHolder {
         private TextView textViewCoin, textViewRank, textViewValue;
-
+        private ImageView imageViewCoin;
         public CoinViewHolder(@NonNull View itemView) {
             super(itemView);
             textViewCoin = itemView.findViewById(R.id.text_view_coin);
             textViewRank = itemView.findViewById(R.id.text_view_rank);
             textViewValue = itemView.findViewById(R.id.textValue);
-
+            imageViewCoin = itemView.findViewById(R.id.imageView2);
         }
         public void bind(final OnCoinClickListener listener, final CoinInfo CoinInfo) {
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -52,9 +55,10 @@ public class CoinAdapter extends RecyclerView.Adapter<CoinAdapter.CoinViewHolder
                     listener.onCoinClick(CoinInfo);
                 }
             });
-            textViewCoin.setText(CoinInfo.getId());
+            textViewCoin.setText(CoinInfo.getSymbol());
             textViewRank.setText(CoinInfo.getRank());
             textViewValue.setText(CoinInfo.getPriceUsd()+"$");
+            Picasso.get().load("https://cryptoicons.org/api/icon/"+CoinInfo.getId().toLowerCase()+"/50").into(imageViewCoin);
         }
     }
 
