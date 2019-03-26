@@ -1,10 +1,16 @@
 package iut.calais.cryptoiut;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.Image;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,9 +20,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import java.io.InputStream;
 import java.util.List;
 
 import retrofit2.Call;
@@ -25,12 +34,15 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
+
 public class MainActivity extends AppCompatActivity implements OnCoinClickListener,NavigationView.OnNavigationItemSelectedListener {
     private RecyclerView recyclerView;
     private CoinAdapter adapter = new CoinAdapter();
     private List<CoinInfo> mCoinList;
-    public static final String COIN_DETAILS_KEY = "com.aloine.crypto_tutorial.COIN_DETAILS_KEY";
+    public static final String COIN_DETAILS_KEY = "6fa68980-9481-452d-84cd-e36565a9f293";
     private ProgressBar mProgressBar;
+    public ImageView imageCrypto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements OnCoinClickListen
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         recyclerView = findViewById(R.id.recycler_view);
+        imageCrypto = (ImageView)findViewById(R.id.imageView2);
         adapter.setCoins(mCoinList);
         adapter.setOnCoinClickListener(this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -64,14 +77,12 @@ public class MainActivity extends AppCompatActivity implements OnCoinClickListen
                     adapter.setCoins(mCoinList);
                     recyclerView.setAdapter(adapter);
                 }
-
             }
-
             @Override
             public void onFailure(Call<List<CoinInfo>> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "Unable to proceed", Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(MainActivity.this, "Page de connexion", Toast.LENGTH_SHORT).show();
             }
+
         });
     }
     @Override
@@ -86,19 +97,13 @@ public class MainActivity extends AppCompatActivity implements OnCoinClickListen
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
@@ -132,6 +137,11 @@ public class MainActivity extends AppCompatActivity implements OnCoinClickListen
 
     @Override
     public void onCoinClick(CoinInfo coinProperty) {
-
+        this.getCoins();
+        coinProperty.getSymbol();
+        Intent intent = new Intent(this, CoinActivity.class);
+        String message = "test";
+        intent.putExtra("coin_property", coinProperty);
+        startActivity(intent);
     }
 }
