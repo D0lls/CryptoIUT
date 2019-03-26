@@ -58,7 +58,7 @@ public class CoinAdapter extends RecyclerView.Adapter<CoinAdapter.CoinViewHolder
             textViewCoin.setText(CoinInfo.getSymbol());
             textViewRank.setText(CoinInfo.getRank());
             textViewValue.setText(CoinInfo.getPriceUsd()+"$");
-            Picasso.get().load("https://cryptoicons.org/api/icon/"+CoinInfo.getId().toLowerCase()+"/50").into(imageViewCoin);
+            Picasso.get().load("https://chasing-coins.com/api/v1/std/logo/"+CoinInfo.getSymbol()).into(imageViewCoin);
         }
     }
 

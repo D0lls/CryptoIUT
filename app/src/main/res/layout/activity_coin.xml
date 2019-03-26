@@ -20,7 +20,9 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_coin" />
+    <include
+        layout="@layout/content_coin"
+        android:layout_height="641dp" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
