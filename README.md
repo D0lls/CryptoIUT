@@ -22,4 +22,5 @@ Membres du groupe :
   - Au clic sur une crypto, affichage du cours de celle-ci sur les dernières 24h
   - Possibilité d'ajouter une crypto en favoris
   - Menu permettant d'accéder aux favoris
+  - Icône et nom de l'application personnalisé
   
