@@ -24,3 +24,9 @@ Membres du groupe :
   - Menu permettant d'accéder aux favoris
   - Icône et nom de l'application personnalisé
   
+ ---------------------------
+   
+ Lien du rapport :
+  https://docs.google.com/document/d/1npyjVf_OhZvXkDxsc6Xr7D2zPuBBXkugoMMATlLXWcI/edit?usp=sharing
+
+ ---------------------------
