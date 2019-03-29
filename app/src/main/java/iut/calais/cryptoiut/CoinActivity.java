@@ -15,10 +15,19 @@ import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 import com.squareup.picasso.Picasso;
 
+import iut.calais.cryptoiut.beans.Resultat;
+import iut.calais.cryptoiut.sqlite.SQLiteDataBaseHelper;
+/**import iut.calais.cryptoiut.sqlite.CryptoFavorite; */
+/**import iut.calais.cryptoiut.sqlite.CryptoSQLite; */
+
 import static java.lang.Float.parseFloat;
 import static java.lang.Integer.parseInt;
 
 public class CoinActivity extends AppCompatActivity {
+
+    TextView nom_crypto =  (TextView) findViewById(R.id.textCoin);
+    TextView prix_crypto =  (TextView) findViewById(R.id.CoinPrice);
+    SQLiteDataBaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,5 +58,8 @@ public class CoinActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
 
 }

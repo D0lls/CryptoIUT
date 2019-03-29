@@ -1,5 +1,7 @@
 package iut.calais.cryptoiut.beans;
 
+import android.widget.TextView;
+
 public class Resultat implements Comparable<Resultat>{
 
 
@@ -15,8 +17,10 @@ public class Resultat implements Comparable<Resultat>{
 
     /**
      * Constructeur
+     * @param scoreDonneur
+     * @param scoreJoueur
      */
-    public Resultat(String scoreDonneur, String scoreJoueur) {
+    public Resultat(TextView scoreDonneur, TextView scoreJoueur) {
         this.scoreDonneur = scoreDonneur;
         this.scoreJoueur = scoreJoueur;
     }

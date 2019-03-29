@@ -31,6 +31,5 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         app:backgroundTint="@android:color/white"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
-
+        app:srcCompat="@android:drawable/btn_star_big_on"
 </android.support.design.widget.CoordinatorLayout>

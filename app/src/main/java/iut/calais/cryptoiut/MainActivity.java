@@ -28,6 +28,7 @@ import android.widget.Toast;
 import java.io.InputStream;
 import java.util.List;
 
+import iut.calais.cryptoiut.sqlite.SQLiteDataBaseHelper;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements OnCoinClickListen
     public static final String COIN_DETAILS_KEY = "6fa68980-9481-452d-84cd-e36565a9f293";
     private ProgressBar mProgressBar;
     public ImageView imageCrypto;
+    SQLiteDataBaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements OnCoinClickListen
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        db = new SQLiteDataBaseHelper(this);
     }
     private void getCoins() {
         Api apiService = Client.getClient().create(Api.class);
